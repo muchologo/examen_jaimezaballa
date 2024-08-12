@@ -1,0 +1,49 @@
+version: '3.8'
+ 
+services:
+  api:
+    image: mysql:latest
+    container_name: api
+    ports:
+      - 10001:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_DATABASE: "dbtest"
+    volumes:
+      - /var/lib/mysql
+    networks:
+      - servernet
+  backend:
+    build:
+      context: ./
+      dockerfile: backend-dockerfile
+    container_name: backend
+    ports:
+      - 10002:80
+    depends_on:
+      - api
+    volumes:
+      - /var/www/html
+    links:
+      - api
+    networks: 
+      - servernet
+  frontend:
+    build:
+      context: ./
+      dockerfile: frontend-dockerfile
+    container_name: frontend
+    ports:
+      - 10003:3000
+    depends_on:
+      - api
+      - backend
+    volumes:
+      - /usr/src/app
+    links:
+      - backend
+    networks: 
+      - servernet
+networks:
+  servernet:
+    driver: bridge

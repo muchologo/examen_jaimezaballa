@@ -1,0 +1,10 @@
+Utilizaría el patrón factory porque:
+
+PROS
+1.- Al cliente, le ahorramos la necesidad de importar las subclases ya que esas van en el constructor de la clase creadora.
+2.- El cliente obtiene un objeto de tipo subclase que se puede utilizar para validaciones estrictas.
+3.- Al tener las instancias dentro de la clase creadora, también tenemos el control de la eliminación de las mismas para ahorrar recursos.
+4.- Si se combina el patrón factory con funciones estáticas podemos optimizar más los recursos del sistema ya que no requerímos un constructor.
+
+PUNTOS DE MEJORA
+1.- Si el envío con ese agente de correo falla y el usuario decide cambiar de agente, tendría que volver a invocar a la clase creadora.

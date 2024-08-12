@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.heading {
+  margin-bottom: 2rem;
+}
+.heading h1 {
+  margin-bottom: 0.5rem;
+}
+.container {
+  max-width: 1280px;
+  margin: 64px auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table td,
+table th {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+}
+table tbody td {
+  border-top: 1px solid #EBEFF5;
+}
+table tbody tr td {
+  transition: all 0.26s ease-out;
+}
+table tbody tr:hover td {
+  background-color: #EBEFF5;
+  color: #3485FE;
+}
+
+.btn {
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.26s ease-out;
+  background-color: #333333;
+  color: white;
+}
+.btn + .btn {
+  margin-left: 0.5rem;
+}
+.btn.current,
+.btn:hover {
+  background-color: #111111;
+}
+.btn.edit {
+  background-color: #328D2E;
+}
+.btn.edit:hover {
+  background-color: #32AF4E;
+}
+.btn.delete {
+  background-color: #DD112A;
+}
+.btn.delete:hover {
+  background-color: #DD334A;
+}
+
+#App {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+#Modal {
+  position: absolute;
+  width:50%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: white;
+  margin-right: -50%;
+  box-shadow: 0 0 4rem rgba(0,0,0,0.26);
+  transition: margin-right 0.26s ease-out;
+  padding: 4rem;
+}
+#Modal.visible {
+  margin-right: 0;
+}
+#Modal .buttons {
+  margin-top: 1rem;
+  text-align: right;
+  background-color: #f5f5f5;
+  padding: 1rem;
+}
+#Modal .messages {
+  color: #DD112A;
+}
+
+.input-group {
+  width: 100%;
+}
+.input-group + .input-group {
+  margin-top: 1rem;
+}
+.input-group .form-control {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ddd;
+  outline: none;
+}

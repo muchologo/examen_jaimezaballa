@@ -1,0 +1,11 @@
+En el patrón factory se delega la creación de las instancia a la fábrica. De esta forma si se incorporan nuevos modelos habrá que modificar la fábrica para aceptarlos.
+En el patrón abstract la fábrica no necesita saber que clase instanciar ya que esa tarea se delega al cliente. De esta forma la fábrica no necesita modificarse para agregar nuevos modelos.
+
+Caso de uso
+Cuando utilizar Factory Pattern:
+El cliente es una fábrica de muebles, su línea de productos es constante y no piensa agregar nuevos muebles en el mediano plazo.
+Ya que el cliente tiene una lista de muebles conocidos, delegamos la creación de instancias a la clase factory y dichas instancias heredan comportamiento de clases abstractas para asegurar el comportamiento.
+
+Cuando utilizar Abstract Factory Pattern:
+El cliente es una fábrica de muebles pero su lista de muebles aun esta siendo definida por lo que puede agregar más tipos en el futuro.
+Ya que la lista de muebles puede crecer, la clase factory recibe instancias en lugar de crearlas. Dichas instancias deben de heredar comportamiento de clases abstractas para asegurar el comportamiento.
